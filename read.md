@@ -6,3 +6,6 @@
 3. GetKnownNodes
 4. GetLinkedNodes
 5. 定时器时间设置
+
+
+微服务有多个实例时，先通过 Etcd 选举一个 Master 实例，然后 Master 实例为所有实例较均匀的分配任务，并将任务分配结果 Set 到 Etcd，最后 Master 和 Node 实例 Watch 到任务列表，并过滤出自身需要处理的任务列表
